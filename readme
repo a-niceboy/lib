@@ -1,0 +1,37 @@
+//	简单smtp发送邮件静态库使用说明
+
+//	一、配置：
+
+//	1.编译添加头 -I/include
+//	2.编译添加库 lib/semail.a
+
+
+//	二、使用：
+
+//	1.引用头文件semail.h
+//	2.使用命名空间email
+//	3.类名sendemail
+//	4.实例类对象sendemail se;
+//	5.设置发送用户
+//	se.user("email@qq.com");
+//	6.设置密码（邮箱开启stmp服务的授权码）
+//	se.password("xxxxxxxx");
+//	7.设置邮件类型（默认qq邮件，可不设置）
+//	se.smtp_url("stmp.qq.com");
+
+//	可以在实例时定义sendemail se("from user email", "password");
+
+//	8.发送邮件
+//	send_email("to user email", "title", "data");
+
+
+//	三、示例：
+#include "semail.h"
+using namespace email;
+
+int main(int argc, char *argv[])
+{
+	sendemail se("1234@qq.com", "abcd");
+	se.send_email("4321@qq.com", "title", "data");
+	return 0;
+}
