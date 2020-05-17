@@ -1,5 +1,5 @@
-all:
-	g++ -o demo test.cpp ../lib/libsemail.a -I../include/
+all : $(object)
+	g++ -std=c++11 -o demo main.cpp ../lib/libprogressbar.a -I../include -pthread
 
-clean:
-	rm -f demo
+clean :
+	rm -f demo *.o
